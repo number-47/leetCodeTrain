@@ -1,7 +1,11 @@
-leetcode plugin模板配置
-TempFilePath: F:\github\leetCodeTrain\src\com\number47\train
+# leetcode plugin模板配置
+## TempFilePath: 
+```
+F:\github\leetCodeTrain\src\com\number47\train
+```
 CodeFileName: $!velocityTool.camelCaseName(${question.titleSlug})
-CodeTemplate:
+## CodeTemplate:
+```
 package com.number47.train.leetcode.editor.cn;
 ${question.content}
 
@@ -11,3 +15,4 @@ Solution solution = new $!velocityTool.camelCaseName(${question.titleSlug})().ne
 }
 ${question.code}
 }
+```

@@ -50,6 +50,13 @@ public class SquaresOfASortedArray {
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i]+" ");
         }
+        System.out.println("");
+        Solution2 solution2 = new SquaresOfASortedArray().new Solution2();
+        int[] num2 = {-7,-3,2,3,11};
+        int result2[] = solution2.sortedSquares(num2);
+        for (int i = 0; i < result2.length; i++) {
+            System.out.print(result2[i]+" ");
+        }
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -69,6 +76,27 @@ class Solution {
         }
         return result;
     }
+}
+
+    /**
+     * 双指针
+     */
+    class Solution2{
+        public int[] sortedSquares(int[] nums) {
+            int n = nums.length;
+            int[] ans = new int[n];
+            for (int i = 0, j = n - 1, pos = n - 1; i <= j;) {
+                if (nums[i] * nums[i] > nums[j] * nums[j]) {
+                    ans[pos] = nums[i] * nums[i];
+                    ++i;
+                } else {
+                    ans[pos] = nums[j] * nums[j];
+                    --j;
+                }
+                --pos;
+            }
+            return ans;
+        }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
